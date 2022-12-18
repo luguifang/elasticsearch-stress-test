@@ -214,7 +214,7 @@ def client_worker(es, indices, STARTED_TIMESTAMP):
         # Iterate over the bulk size
         for _ in range(BULK_SIZE):
             # Generate the bulk operation
-            curr_bulk += "{0}\n".format(json.dumps({"index": {"_index": choice(indices), "_type": "stresstest"}}))
+            curr_bulk += "{0}\n".format(json.dumps({"index": {"_index": choice(indices)}}))
             curr_bulk += "{0}\n".format(json.dumps(choice(documents)))
 
         try:
